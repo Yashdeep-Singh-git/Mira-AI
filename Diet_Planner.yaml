@@ -1,0 +1,96 @@
+version: 1.0.1
+metadata:
+  name: advanced-diet-planner-
+  description: It is an advanced diet planner that customizes meal plans based on
+    key inputs such as height, weight, gender, age, and diet goals (e.g., weight loss,
+    weight gain, bodybuilding, etc.). Using this data, it calculates the required
+    intake of protein, carbohydrates, and other nutrients, then generates a personalized,
+    weekly diet plan for optimal results.
+  author: mystery2000
+  private: false
+  tags:
+  - speech
+  - speechgenerator
+inputs:
+  Age:
+    type: string
+    description: Enter your Age
+    required: true
+    example: '18'
+  Goal:
+    type: string
+    description: Enter what do you want to achieve using this diet. For eg, Weight
+      loss/gain , Body-building , Normal Balanced-Diet , etc.
+    required: true
+    example: Body-Building
+  Gender:
+    type: string
+    description: Enter your Gender
+    required: true
+    example: Male
+  Height:
+    type: string
+    description: Enter your Height
+    required: true
+    example: 160cm
+  Weight:
+    type: string
+    description: Enter your Weight
+    required: true
+    example: 70kg
+  Veg/Non-Veg:
+    type: string
+    description: Tell Whether you are VEG or NON-VEG
+    required: true
+    example: VEG
+  Food Allergy:
+    type: string
+    description: If you are having allergy from anything in specific. Write none if
+      you have no allergies
+    required: true
+    example: Peanut Allergy
+  Medical Condition:
+    type: string
+    description: 'Eg: Diabetes, cholestrol, obesity, etc. Write healthy body if your
+      are perfectly fine'
+    required: true
+    example: Diabetes
+output:
+  name: story
+  type: string
+model:
+  provider: openai
+  name: gpt-4o
+prompt: '  You need to make a diet plan. You have the following information about
+  the person. Age: {Age}; Gender: {Gender}; Height: {Height}; Weight:{Weight}. The
+  goal of the {Veg/Non-Veg}  diet should be {Goal}. The person is suffering from {Medical
+  Condition}. The person has allergy from {Food Allergy}.\
+
+  Also Create a proper schedule for the diet, including time and approx. amount of
+  food'
+readme: "# Advanced Diet Planner\n\n## Overview\nThe Advanced Diet Planner is a smart\
+  \ meal planning tool that customizes diet plans based on individual needs. By analyzing\
+  \ key inputs such as height, weight, gender, age, and diet goals (e.g., weight loss,\
+  \ weight gain, bodybuilding, etc.), it calculates the required intake of protein,\
+  \ carbohydrates, and other essential nutrients. The planner then generates a personalized\
+  \ **weekly diet plan** for optimal health and fitness.\n\n## Features\n- **Personalized\
+  \ Meal Plans**: Tailored diet recommendations based on user-specific inputs.\n-\
+  \ **Nutrient Calculation**: Determines the ideal intake of protein, carbohydrates,\
+  \ and other nutrients.\n- **Goal-Oriented Planning**: Supports various goals such\
+  \ as weight loss, muscle gain, and maintenance.\n- **Weekly Schedule**: Provides\
+  \ a structured diet plan for easy adherence.\n\n## How It Works\n1. Input your height,\
+  \ weight, gender, age, and diet goal.\n2. The planner calculates your required macronutrient\
+  \ intake.\n3. A weekly diet plan is generated based on your nutritional needs.\n\
+  4. Follow the structured plan for optimal results.\n\n## Installation & Usage\n\
+  1. Clone the repository:\n   ```bash\n   git clone https://github.com/yourusername/diet-planner.git\n\
+  \   ```\n2. Navigate to the project directory:\n   ```bash\n   cd diet-planner\n\
+  \   ```\n3. Install dependencies:\n   ```bash\n   npm install  # or pip install\
+  \ -r requirements.txt (for Python-based versions)\n   ```\n4. Run the application:\n\
+  \   ```bash\n   npm start  # or python app.py\n   ```\n\n## Technologies Used\n\
+  - Programming Language: Python / JavaScript (depending on implementation)\n- Frameworks:\
+  \ React / Flask / Node.js\n- Database: MongoDB / MySQL (if applicable)\n- APIs:\
+  \ Nutrition & diet-related APIs (if used)\n\n## Contributions\nContributions are\
+  \ welcome! Feel free to fork the repository, create a branch, and submit a pull\
+  \ request.\n\n## License\nThis project is licensed under the MIT License.\n\n##\
+  \ Contact\nFor any inquiries or support, please contact [your email/contact info].\n\
+  \n"
