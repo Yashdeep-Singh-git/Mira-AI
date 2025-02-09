@@ -10,7 +10,7 @@ import pandas as pd
 class DietPlannerClient:
     def __init__(self):
         load_dotenv()
-        self.api_key = os.getenv("API_KEY")
+        self.api_key = st.secrets["API_KEY"]
         if not self.api_key:
             raise ValueError("API_KEY not found in environment variables")
         self.client = MiraClient(config={"API_KEY": self.api_key})
